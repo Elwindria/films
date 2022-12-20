@@ -1,24 +1,28 @@
 <div class="flex justify-center gap-8 mx-auto px-10">  
     <div class="w-10/12">
-        <div class="flex flex-col gap-4 pt-6 pb-2 mb-2 px-2 sticky -top-1 bg-king-light rounded-b-3xl z-40">
+        <div class="flex flex-col gap-4 pt-6 pb-2 mb-2 px-2 sticky top-20 bg-king-light rounded-b-3xl z-40">
             <div class="justify-center flex flex-col gap-4">
                 <div class="relative w-2/5 self-center">
                     <input wire:model.debounce.500ms="search" class="text-2xl font-bold block w-full text-center appearance-none rounded-3xl p-5 border-honey border-2 h-8 bg-white focus:ring focus:ring-honey-light/50 focus:border-transparent text-king" placeholder="rechercher..." type="search" style="caret-color: rgb(107, 114, 128);" tabindex="0">
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 items-center">
 		            <button wire:click="switchOrderByType('id')" class="w-1/12 text-amber-600 text-2xl text-center font-bold">Num</button>
                     <button wire:click="switchOrderByType('name')" class="w-3/12 text-amber-600 text-2xl font-bold text-start">Titre</button>
                     <button wire:click="switchOrderByType('actor')" class="w-2/12 text-amber-600 text-2xl text-center font-bold">Acteur</button>
                     <button wire:click="switchOrderByType('director')" class="w-2/12 text-amber-600 text-2xl text-center font-bold">Réalisateur</button>
                     <button wire:click="switchOrderByType('year')" class="w-1/12 text-amber-600 text-2xl text-center font-bold">Année</button>
                     <button wire:click="switchOrderByType('category')" class="w-2/12 text-amber-600 text-2xl text-center font-bold">Catégorie</button>
-                    <button wire:click="switchOrderByType('category')" class="w-1/12 text-amber-600 text-2xl text-center font-bold">Dispo</button>
+                    <div class="w-1/12 items-center flex flex-col justify-center text-xl gap-1 text-amber-600 font-bold"> {{ $this->type === "available" ? 'Endommagés' : 'Disponible' }}
+                        <button title="Voir les films {{ $this->type === "available" ? 'endommagés' : 'disponible' }}" type="button" wire:click="switchOrderByType('type')" class="{{ $this->type === 'available' ? 'bg-red-600' : 'bg-green-600' }} w-11 shadow-sm relative inline-flex h-6 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2" role="switch" aria-checked="false">
+                            <span aria-hidden="true" class="{{ $this->type === 'available' ? 'translate-x-5' : 'translate-x-0' }} pointer-events-none inline-block h-5 w-5 transform rounded-full bg-king ring-0 transition duration-200 ease-in-out"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="flex flex-col justify-center gap-2">
             @foreach( $all_film as $film)
-            <a href="{{ route('store', ['film_id' => $film->id]) }}" class="flex items-center bg-gray-300 p-2 border-king hover:bg-gray-400 rounded-3xl border-2">
+            <a href="{{ route('store', ['film_id' => $film->id]) }}" class="flex items-center bg-gray-300 p-2 border-king hover:bg-amber-600 rounded-3xl border-2">
 		        <p class="w-1/12 font-bold text-center text-xl text-king">{{ $film->id }}</p>
                 <p class="w-3/12 font-bold text-xl text-king">{{ $film->name }}</p>
                 <p class="w-2/12 font-bold text-xl text-center text-king">{{ $film->actor }}</p>
@@ -39,7 +43,7 @@
         </div>
     </div>
     <div class="flex flex-col items-start w-2/12">
-        <div class="flex flex-col items-start sticky -top-1">
+        <div class="flex flex-col items-start sticky top-20">
             <span class="font-bold text-2xl text-white px-3 py-8">Résultat ({{ $count }})</span>
             <button wire:click="switchCategoryType('all')" class="{{ $this->category === 'all' ? 'text-white' : 'text-amber-600' }} px-3 font-bold text-2xl capitalize ">Tout</button>
             <button wire:click="switchCategoryType('action')" class="{{ $this->category === 'action' ? 'text-white' : 'text-amber-600' }} px-3 font-bold text-2xl capitalize ">Action</button>

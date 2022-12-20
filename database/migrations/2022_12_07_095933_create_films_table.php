@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("actor");
             $table->string("director");
             $table->integer("year");
-            $table->enum('category', ['action', 'aventure', 'biblique', 'catastrophe','comédie' , 'comédie-française', 'comédie-dramatique', 'comédie-policière', 'dessin-animé', 'documentaire', 'drame', 'espionnage', 'fait-vécu', 'fantastique', 'guerre', 'policier', 'horreur', 'science-fiction', 'série', 'super-héros', 'thriller', 'vieux-film', 'western']);
+            $table->enum('category', ['action', 'aventure', 'biblique', 'catastrophe', 'comédie' , 'comédie-française', 'comédie-dramatique', 'comédie-policière', 'dessin-animé', 'documentaire', 'drame', 'espionnage', 'fait-vécu', 'fantastique', 'guerre', 'policier', 'horreur', 'science-fiction', 'série', 'super-héros', 'thriller', 'vieux-film', 'western']);
             $table->enum('type', ['available', 'unavailable', 'need']);
             $table->timestamps();
         });

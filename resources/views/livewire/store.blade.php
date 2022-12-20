@@ -47,7 +47,7 @@
         </div>
         <div class="flex px-8 py-6 w-4/6 justify-between">
             <button wire:click="switchType('available')" class="{{ $this->type === 'available' ? 'text-white bg-king' : 'text-king bg-white' }} w-52 border-king p-3 font-bold rounded-2xl text-2xl">disponible</button>
-            <button wire:click="switchType('unavailable')" class="{{ $this->type === 'unavailable' ? 'text-white bg-king' : 'text-king bg-white' }} w-52 border-king p-3 font-bold rounded-2xl text-2xl">non-disponible</button>
+            <button wire:click="switchType('unavailable')" class="{{ $this->type === 'unavailable' ? 'text-white bg-king' : 'text-king bg-white' }} w-52 border-king p-3 font-bold rounded-2xl text-2xl">endommagé</button>
             <button wire:click="switchType('need')" class="{{ $this->type === 'need' ? 'text-white bg-king' : 'text-king bg-white' }} w-52 border-king p-3 font-bold rounded-2xl text-2xl">à acheter</button>
         </div>
         <div class="flex flex-col justify-center gap-3 w-96 mt-6 items-center">

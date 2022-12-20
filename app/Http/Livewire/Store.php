@@ -45,7 +45,7 @@ class Store extends Component
             }
         }
 
-        $categories = ['action', 'aventure', 'biblique', 'catastrophe', 'comédie-francaise', 'comédie-dramatique', 'dessin-animé', 'documentaire', 'drame', 'espionnage', 'fait-vécu', 'guerre', 'policier', 'horreur', 'science-fiction', 'série', 'super-héros', 'thriller', 'vieux-film', 'western'];
+        $categories = ['action', 'aventure', 'biblique', 'catastrophe','comédie' , 'comédie-française', 'comédie-dramatique', 'comédie-policière', 'dessin-animé', 'documentaire', 'drame', 'espionnage', 'fait-vécu', 'fantastique', 'guerre', 'policier', 'horreur', 'science-fiction', 'série', 'super-héros', 'thriller', 'vieux-film', 'western'];
 
         return view('livewire.store', compact('categories'));
     }
