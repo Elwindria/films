@@ -24,15 +24,8 @@
         <div class="relative flex align-middle justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-lg text-gray-700 dark:text-gray-500 underline">Panneau de cobtrôle</a>
-                    @else
-                        <a href="{{ route('login') }}" class=" text-gray-700 text-lg dark:text-gray-500 underline">Connection</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-lg text-gray-700 dark:text-gray-500 underline">S'inscrire</a>
-                        @endif
-                    @endauth
+                    <a href="{{ route('login') }}" class=" text-gray-700 text-lg dark:text-gray-500 underline">Connection</a>
+                    <a href="{{ route('register') }}" class="ml-4 text-lg text-gray-700 dark:text-gray-500 underline">S'inscrire</a>
                 </div>
             @endif
         </div>
