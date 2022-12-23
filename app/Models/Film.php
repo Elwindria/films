@@ -9,6 +9,21 @@ class Film extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name','actor', 'director', 'year', 'category', 'type'
+        'name', 'year', 'type'
     ];
+
+    public function director()
+    {
+        return $this->belongsTo(Director::class);
+    }
+
+    public function actors()
+    {
+        return $this->belongsToMany(Actor::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }

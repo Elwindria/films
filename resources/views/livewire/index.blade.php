@@ -1,6 +1,6 @@
-<div class="flex justify-center gap-8 mx-auto px-10">  
-    <div class="w-10/12">
-        <div class="flex flex-col gap-4 pt-6 pb-2 mb-2 px-2 sticky top-20 bg-king-light rounded-b-3xl z-40">
+<div class="flex justify-center gap-8">  
+    <div class="w-full">
+        <div class="flex flex-col gap-4 pt-6 pb-2 mb-2 px-2 sticky top-20 bg-black z-40">
             <div class="justify-center flex flex-col gap-4">
                 <div class="relative w-2/5 self-center">
                     <input wire:model.debounce.500ms="search" class="text-2xl font-bold block w-full text-center appearance-none rounded-3xl p-5 border-honey border-2 h-8 bg-white focus:ring focus:ring-honey-light/50 focus:border-transparent text-king" placeholder="rechercher..." type="search" style="caret-color: rgb(107, 114, 128);" tabindex="0">
@@ -42,7 +42,7 @@
             @endforeach
         </div>
     </div>
-    <div class="flex flex-col items-start w-2/12">
+    <div class="flex flex-col items-start w-0/12 fixed">
         <div class="flex flex-col items-start sticky top-20">
             <span class="font-bold text-2xl text-white px-3 py-8">Résultat ({{ $count }})</span>
             <button wire:click="switchCategoryType('all')" class="{{ $this->category === 'all' ? 'text-white' : 'text-amber-600' }} px-3 font-bold text-2xl capitalize ">Tout</button>

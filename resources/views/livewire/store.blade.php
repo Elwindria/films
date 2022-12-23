@@ -1,5 +1,5 @@
 <div class="max-h-screen md:max-w-7xl md:mx-auto">
-    <div class="relative rounded-b-3xl min-h-full p-4 bg-king-light md:shadow-xl flex flex-col gap-5 items-center">
+    <div class="relative rounded-b-3xl min-h-full p-4 md:shadow-xl flex flex-col gap-5 items-center bg-king">
         <div class="flex flex-col justify-center w-4/6">
             <label for="category" class="text-amber-600 text-xl font-bold indent-4">Catégories</label>
             <select name="category" id="category" wire:model='category' class="text-center rounded-3xl border-king border-2 h-11 bg-white text-king focus:ring focus:ring-honey focus:border-transparent text-xl font-bold">

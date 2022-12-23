@@ -20,8 +20,8 @@
     <body class="font-sans antialiased">
         <livewire:toasts />
 
-        <div class="min-h-screen bg-gray-800">
-            <nav class="rounded-b-3xl bg-white sticky top-0 h-20">
+        <div class="min-h-screen bg-white">
+            <nav class=" bg-white sticky top-0 h-20">
                 <div class="mx-auto max-w-7xl px-2 sm:px-3 lg:px-4 relative z-50 flex justify-between py-2 align-middle items-center">
     
                     <div class="relative z-10 flex items-center">

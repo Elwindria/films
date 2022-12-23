@@ -16,10 +16,10 @@ module.exports = {
             },
             colors:{
                 'king': {
-                    DEFAULT: '#151850',
-                },
-                'king-light': {
                     DEFAULT: '#414479',
+                },
+                'king-dark': {
+                    DEFAULT: '#151850',
                 }
             },
         },
